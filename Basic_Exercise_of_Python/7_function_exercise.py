@@ -1,3 +1,5 @@
+import math
+
 # 1. Write a function called print_pattern that takes integer number as an argument and prints following pattern if input number is 3,
 # ```
 # *
@@ -66,6 +68,15 @@ def calculate_area(dimension1, dimension2, shape = "triangle"):
     else:
         print("Error: Input shape is neither triangle nor rectangle")
         return None
+    
+
+# 3. Write circle_calc() function that takes radius of a circle as an input from user and then it calculates and returns area, circumference and diameter. You should get these values in your main program by calling circle_calc function and then print them.
+
+def circle_calc(radius):
+    area_of_circle = round(math.pi*(radius**2), 2)
+    circumference = round(2*math.pi*radius, 2)
+    diameter = 2*radius
+    return area_of_circle, circumference, diameter  
 
 
 
@@ -84,3 +95,11 @@ print("Print pattern with input = 4")
 print_pattern(4)
 print("Print pattern without parameter or default parameter")
 print_pattern()
+
+
+
+if __name__ == "__main__":
+    radius = input("Enter radius of the circle: ")
+    radius = float(radius)
+    circle_Area, c, d = circle_calc(radius)
+    print(f"Area: {circle_Area}, Circumference: {c}, Diameter: {d}")
